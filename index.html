@@ -5,6 +5,7 @@
     <title>League of Legends Survey</title>
     <style>
     body{
+        font-family:Arial;
         background:url(http://img12.deviantart.net/40bc/i/2017/106/f/9/xayah_and_rakan__by_rubensayan-db60z1b.jpg);
         background-repeat:no-repeat;
         background-size:cover;
@@ -14,9 +15,96 @@
         text-align:center;
         margin-top:3%;
     }
+    
+    .formBody{
+        background-color:#ffdb99;
+        opacity:0.8;
+        /*messed up the table*/
+        /*text-align:center;*/
+        margin-top:5%;
+        color:#002d7f;
+        margin-left:5%;
+        margin-right:5%;
+    }
+    table{
+        margin-left:30%;
+    }
+    tr{
+        margin-top:4%;
+    }
     </style>
 </head>
 <body>
-    <h1 class="text-center header">League Of Legends Survey</h1>
+    <!--<h1 class="text-center header">League Of Legends Survey</h1>-->
+    <form  class="text-center">
+        <h1 class="text-center header">League Of Legends Survey(New Honor System)</h1>
+        <div class="formBody">
+            <section>
+                
+                
+                <table>
+                    <tr><td><legend>Player Information</legend></td></tr>
+                    <tr>
+                        <td>Username:</td>
+                        <td><input type="text" name="username" value="username"></td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth:</td>
+                        <td><input type="date" name="dateofbirth" id="dateofbirth"></td>
+                    </tr>
+                    <tr><td><legend>Ranking:</legend></td></tr>
+                    <tr>
+                        
+                        <td><label for="ranking1">Unranked<input type="radio" name="ranking" value="ranking1"></label></td>
+                        <td><label for="ranking2">Bronze<input type="radio" name="ranking" value="ranking2"></label></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking" value="ranking3"></label></td>
+                        <td><label for="ranking4">Platinum or higher<input type="radio" name="ranking" value="ranking4"></label></td>
+                    </tr>
+                    <tr>
+                        <td>Number of champions you main:</td>
+                        <td><input type="number" min="1" max="130"></td>
+                    </tr>
+                    <tr>
+                        <td>Should you be allowed to honor the enemy team as well?</td>
+                        <td><label>No<input type="radio" name="honorenemy" value="no"></label></td>
+                        <td><label>Yes<input type="radio" name="honorenemy" value="yes"></label></td>
+                    </tr>
+                    <tr>
+                        <td>Your opinion on and experience with the honor System:</td>
+                    <td>    
+                        <label for="">It is great<input type="checkbox" name="opinion" value="great" id="great"></label>
+                        <label for="">It could be better<input type="checkbox" name="opinion" value="improvement" id="improvement"></label>
+                        <label for="">It is terrible<input type="checkbox" name="opinion" value="terrible" id="terrible"></label>
+                        <label for="">I feel like people have gotten friendlier in game<input type="checkbox" name="opinion" value="friendlier" id="friendlier"></label>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td>Select the kind of Champions you prefer:</td>
+                        <td><select name="typeofChamps">
+                            <option value="Tanks">Tanks</option>
+                            <option value="Fighters">Fighters</option>
+                            <option value="Slayers">Slayers</option>
+                            <option value="Mages">Mages</option>
+                            <option value="Healers">Healers</option>
+                            <option value="Marksmen">Marksmen</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>Comments and questions:</td>
+                        <td><textarea></textarea></td>
+                    </tr>
+                    <tr><td><input type="submit" value="Submit Survey"></td></tr>
+                    
+                    
+                    <!--<legend>Ranking</legend>-->
+                </table>
+            </section>
+            
+        </div>
+    </form>
+
+
 </body>
 </html>
