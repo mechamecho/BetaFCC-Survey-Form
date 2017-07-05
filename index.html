@@ -46,7 +46,7 @@
 </head>
 <body>
     <!--<h1 class="text-center header">League Of Legends Survey</h1>-->
-    <form  class="text-center" id="form" action="" method="POST">
+    <form  class="text-center" id="form" action="" method="GET">
         <h1 class="text-center header">League Of Legends Survey (New Honor System)</h1>
         <div class="formBody">
             <section>
@@ -57,11 +57,11 @@
                         <td><legend id="first-line">Player Information<hr></legend></td></tr>
                     <tr>
                         <td>Username:</td>
-                        <td><input type="text" class="required"name="username" placeholder="username" required></td>
+                        <td><input type="text" class="required"name="username" placeholder="username" id="user" required></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type="email" name="email" class="required" placeholder="email" required></td>
+                        <td><input type="email" name="email" class="required" placeholder="email" id="email" required></td>
                     </tr>
                     <tr>
                         <td>Date of Birth:</td>
@@ -71,12 +71,12 @@
                     <tr><td><legend>Ranking:</legend></td></tr>
                     <tr>
                         
-                        <td><label for="ranking1">Unranked<input class="required" type="radio" name="ranking" value="ranking1" required></label></td>
-                        <td><label for="ranking2">Bronze<input type="radio" name="ranking" value="ranking2"></label></td>
+                        <td><label for="ranking1">Unranked<input class="required" type="radio" name="ranking" id="rank" required></label></td>
+                        <td><label for="ranking2">Bronze<input type="radio" name="ranking"></label></td>
                     </tr>
                     <tr>
-                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking" value="ranking3"></label></td>
-                        <td><label for="ranking4">Platinum or higher<input type="radio" name="ranking" value="ranking4"></label></td>
+                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking"></label></td>
+                        <td><label for="ranking4">Platinum or higher<input type="radio" name="ranking"></label></td>
                     </tr>
                     <tr>
                         <td>Number of champions you main:</td>
@@ -106,7 +106,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label><input type="radio" name="honorenemy" value="Doesn't-matter" class="required" required>Doesn't matter</label></td>
+                        <td><label><input type="radio" name="honorenemy" value="Doesn't-matter" class="required" id="opinion" required>Doesn't matter</label></td>
                     </tr>
                     <tr>
                         <td>Your opinion on and experience with the honor System:</td>
@@ -139,12 +139,19 @@
     </form>
     <script>
     /*global $*/
-        $("#submit-button").click(function(){
-            if ($(".required").val().length!=0){
+    $("#submit-button").click(function(){
+            if($("#user").val().length!=0&&$("#email").val().length!=0&&$("#rank").val().length!=0&&$("#opinion").val().length!=0){
                 alert("Thank you!");
                 $('#form').trigger("reset");
             }
-        });
+
+
+
+});
+        // if ($(".required").val().length!=0){
+        //     alert("Thank you!");
+        //     $('#form').trigger("reset");
+        // }
     </script>
 
 
