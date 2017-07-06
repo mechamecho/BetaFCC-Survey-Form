@@ -46,7 +46,7 @@
 </head>
 <body>
     <!--<h1 class="text-center header">League Of Legends Survey</h1>-->
-    <form  class="text-center" id="form" action="" method="GET">
+    <form  class="text-center" id="form" action="" method="POST">
         <h1 class="text-center header">League Of Legends Survey (New Honor System)</h1>
         <div class="formBody">
             <section>
@@ -139,19 +139,43 @@
     </form>
     <script>
     /*global $*/
-    $("#submit-button").click(function(){
-            if($("#user").val().length!=0&&$("#email").val().length!=0&&$("#rank").val().length!=0&&$("#opinion").val().length!=0){
-                alert("Thank you!");
-                $('#form').trigger("reset");
-            }
+//     $("#submit-button").click(function(){
+//             if($("#user").val().length!=0&&$("#email").val().length!=0&&$("#rank").val().length!=0&&$("#opinion").val().length!=0){
+//                 alert("Thank you!");
+//                 $('#form').trigger("reset");
+//             }
 
 
 
-});
+// });
         // if ($(".required").val().length!=0){
         //     alert("Thank you!");
         //     $('#form').trigger("reset");
         // }
+    $("#submit-button").click(function(){
+        var count=0;
+        $('.required').each(function(index, obj){
+            if($(this).val().length==0){
+                count++;
+            }
+        }); 
+        if($('input[name=ranking]:checked').length<=0||$('input[name=honorenemy]:checked').length<=0){
+                event.preventDefault();
+                alert("choose a ranking, and opponent honor option");
+        }
+        
+            
+        if (count==0){
+            // sessionStorage.setItem("username",document.getElementById("user").value());
+            alert("Thank you! ");
+            // +sessionStorage.getItem("username")
+        }
+            // $('#form').trigger("reset");    
+
+        
+    //you can use this to access the current item
+                   
+});
     </script>
 
 
