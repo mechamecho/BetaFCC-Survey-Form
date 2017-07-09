@@ -71,12 +71,12 @@
                     <tr><td><legend>Ranking:</legend></td></tr>
                     <tr>
                         
-                        <td><label for="ranking1">Unranked<input class="required" type="radio" name="ranking" id="rank" value="Unranked" required></label></td>
-                        <td><label for="ranking2">Bronze<input type="radio" name="ranking" value="Bronze"></label></td>
+                        <td><label for="ranking1">Unranked<input type="radio" name="ranking" id="rank" value="Unranked" ></label></td>
+                        <td><label for="ranking2">Bronze<input type="radio" name="ranking"  id="rank" value="Bronze" required></label></td>
                     </tr>
                     <tr>
-                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking" value="Silver or Gold"></label></td>
-                        <td><label for="ranking4">Platinum or higher<input type="radio" value="Platinum or higher" name="ranking"></label></td>
+                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking" value="Silver or Gold" id="rank"></label></td>
+                        <td><label for="ranking4">Platinum or higher<input type="radio" value="Platinum or higher" name="ranking" id="rank"></label></td>
                     </tr>
                     <tr>
                         <td>Number of champions you main:</td>
@@ -168,7 +168,15 @@
         if (count==0){
             sessionStorage.setItem("user",document.getElementById("user").value);
             //ask about getting the value of the selected radio button
-            sessionStorage.setItem("rank", document.getElementById("rank").value);
+            
+            var ranks=$("input[name='ranking']");
+            for (var i=0; i< ranks.length; i++){
+                if (ranks[i].checked){
+                    var rank=ranks[i].value;
+                    sessionStorage.setItem("rank", rank);
+                }
+            }
+            
             alert("Thank you "+sessionStorage.getItem("user")+" !");
             // 
         }
