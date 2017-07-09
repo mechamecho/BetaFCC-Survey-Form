@@ -46,7 +46,7 @@
 </head>
 <body>
     <!--<h1 class="text-center header">League Of Legends Survey</h1>-->
-    <form  class="text-center" id="form" action="" method="POST">
+    <form  class="text-center" id="form" action="submission.html" method="GET">
         <h1 class="text-center header">League Of Legends Survey (New Honor System)</h1>
         <div class="formBody">
             <section>
@@ -57,7 +57,7 @@
                         <td><legend id="first-line">Player Information<hr></legend></td></tr>
                     <tr>
                         <td>Username:</td>
-                        <td><input type="text" class="required"name="username" placeholder="username" id="user" required></td>
+                        <td><input type="text" class="required user" name="username" placeholder="username" id="user" required></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
@@ -71,12 +71,12 @@
                     <tr><td><legend>Ranking:</legend></td></tr>
                     <tr>
                         
-                        <td><label for="ranking1">Unranked<input class="required" type="radio" name="ranking" id="rank" required></label></td>
-                        <td><label for="ranking2">Bronze<input type="radio" name="ranking"></label></td>
+                        <td><label for="ranking1">Unranked<input class="required" type="radio" name="ranking" id="rank" value="Unranked" required></label></td>
+                        <td><label for="ranking2">Bronze<input type="radio" name="ranking" value="Bronze"></label></td>
                     </tr>
                     <tr>
-                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking"></label></td>
-                        <td><label for="ranking4">Platinum or higher<input type="radio" name="ranking"></label></td>
+                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking" value="Silver or Gold"></label></td>
+                        <td><label for="ranking4">Platinum or higher<input type="radio" value="Platinum or higher" name="ranking"></label></td>
                     </tr>
                     <tr>
                         <td>Number of champions you main:</td>
@@ -106,7 +106,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><label><input type="radio" name="honorenemy" value="Doesn't-matter" class="required" id="opinion" required>Doesn't matter</label></td>
+                        <td><label><input type="radio" name="honorenemy" value="Doesn't matter" class="required" id="opinion" required>Doesn't matter</label></td>
                     </tr>
                     <tr>
                         <td>Your opinion on and experience with the honor System:</td>
@@ -166,9 +166,11 @@
         
             
         if (count==0){
-            // sessionStorage.setItem("username",document.getElementById("user").value());
-            alert("Thank you! ");
-            // +sessionStorage.getItem("username")
+            sessionStorage.setItem("user",document.getElementById("user").value);
+            //ask about getting the value of the selected radio button
+            sessionStorage.setItem("rank", document.getElementById("rank").value);
+            alert("Thank you "+sessionStorage.getItem("username")+" !");
+            // 
         }
             // $('#form').trigger("reset");    
 
