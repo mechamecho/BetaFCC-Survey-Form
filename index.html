@@ -1,193 +1,201 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--<meta name="viewport" content="width=device-height, initial-scale=1">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <title>League of Legends Survey</title>
-    <style>
-    body{
-        font-family:Arial;
-        background:url(http://img12.deviantart.net/40bc/i/2017/106/f/9/xayah_and_rakan__by_rubensayan-db60z1b.jpg);
-        background-repeat:no-repeat;
-        background-size:cover;
-        width:100%;
-        background-position: center;
-        height:100%;
-    }
-    .header{
-        color:#ffa500;
-        text-align:center;
-        margin-top:3%;
-    }
-    
-    .formBody{
-        background-color:#ffdb99;
-        opacity:0.8;
-        /*messed up the table*/
-        /*text-align:center;*/
-        margin-top:5%;
-        color:#002d7f;
-        margin-left:20%;
-        margin-right:20%;
-        border-radius: 25px;
-    }
-    table{
-        margin-left:20%;
-    }
-    td{
-        padding-bottom :3%;
-    }
-    #first-line{
-        margin-top:10%;
-    }
-    </style>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script><!--<meta name="viewport" content="width=device-height, initial-scale=1">-->
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<title>League of Legends Survey</title>
+	<style>
+	   body{
+	       font-family:Arial;
+	       background:url(http://img12.deviantart.net/40bc/i/2017/106/f/9/xayah_and_rakan__by_rubensayan-db60z1b.jpg);
+	       background-repeat:no-repeat;
+	       background-size:cover;
+	       width:100%;
+	       background-position: center;
+	       height:100%;
+	   }
+	   .header{
+	       color:#ffa500;
+	       text-align:center;
+	       margin-top:3%;
+	   }
+	   
+	   .formBody{
+	       background-color:#ffdb99;
+	       opacity:0.8;
+	       /*messed up the table*/
+	       /*text-align:center;*/
+	       margin-top:10%;
+	       color:#002d7f;
+	       margin-left:20%;
+	       margin-right:20%;
+	       border-radius: 25px;
+	   }
+	   table{
+	       margin-left:20%;
+	   }
+	   td{
+	       padding-bottom :3%;
+	   }
+	   .first-line{
+	       margin-top:5%;
+	       margin-left:10%;
+	   }
+	   .text-input{
+	       width:70%;    
+	   }
+	</style>
 </head>
 <body>
-    <!--<h1 class="text-center header">League Of Legends Survey</h1>-->
-    <form  class="text-center" id="form" action="submission.html" method="GET">
-        <h1 class="text-center header">League Of Legends Survey (New Honor System)</h1>
-        <div class="formBody">
-            <section>
-                
-                
-                <table>
-                    <tr>
-                        <td><legend id="first-line">Player Information<hr></legend></td></tr>
-                    <tr>
-                        <td>Username:</td>
-                        <td><input type="text" class="required user" name="username" placeholder="username" id="user" required></td>
-                    </tr>
-                    <tr>
-                        <td>Email:</td>
-                        <td><input type="email" name="email" class="required" placeholder="email" id="email" required></td>
-                    </tr>
-                    <tr>
-                        <td>Date of Birth:</td>
-                        <td><input type="date" name="dateofbirth" id="dateofbirth"></td>
-                    </tr>
-                    
-                    <tr><td><legend>Ranking:</legend></td></tr>
-                    <tr>
-                        
-                        <td><label for="ranking1">Unranked<input type="radio" name="ranking" id="rank" value="Unranked" ></label></td>
-                        <td><label for="ranking2">Bronze<input type="radio" name="ranking"  id="rank" value="Bronze" required></label></td>
-                    </tr>
-                    <tr>
-                        <td><label for="ranking3">Silver or Gold<input type="radio" name="ranking" value="Silver or Gold" id="rank"></label></td>
-                        <td><label for="ranking4">Platinum or higher<input type="radio" value="Platinum or higher" name="ranking" id="rank"></label></td>
-                    </tr>
-                    <tr>
-                        <td>Number of champions you main:</td>
-                        <td><input type="number" min="1" max="130"></td>
-                    </tr>
-                    <tr>
-                        <td>Select the kind of Champions you prefer:</td>
-                        <td><select name="typeofChamps">
-                            <option value="Tanks">Tanks</option>
-                            <option value="Fighters">Fighters</option>
-                            <option value="Slayers">Slayers</option>
-                            <option value="Mages">Mages</option>
-                            <option value="Healers">Healers</option>
-                            <option value="Marksmen">Marksmen</option>
-                        </select></td>
-                    </tr>
-                    <tr>
-                    <tr>
-                        <td><legend>Player's opinions on the new honor system</legend><hr></td>
-                    </tr>
-                    <tr>
-                        <td>Should you be allowed to honor the enemy team as well?</td>
-                        <td>
-                            <label><input type="radio" name="honorenemy" value="no">No</label>
-                            <label><input type="radio" name="honorenemy" value="yes">Yes</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><label><input type="radio" name="honorenemy" value="Doesn't matter" class="required" id="opinion" required>Doesn't matter</label></td>
-                    </tr>
-                    <tr>
-                        <td>Your opinion on and experience with the honor System:</td>
-                    <tr>
-                        <td>    
-                            <input type="checkbox" name="opinion" value="great" id="great"><label for="">It is great</label>
-                            <input type="checkbox" name="opinion" value="improvement" id="improvement"><label for="improvement">It could be better</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="opinion" value="terrible" id="terrible"><label for="terrible">It is terrible</label>
-                            <input type="checkbox" name="opinion" value="friendlier" id="friendlier"><label for="friendlier">I feel like people have gotten friendlier in game</label>
-                        </td>
-                    </tr>
-                    
-                        <td>Comments and questions:</td>
-                        <td><textarea></textarea></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><input type="submit" name="submit-button" id="submit-button" value="Submit Survey"></td></tr>
-                    
-                    
-                    <!--<legend>Ranking</legend>-->
-                </table>
-            </section>
-            
-        </div>
-    </form>
-    <script>
-    /*global $*/
-//     $("#submit-button").click(function(){
-//             if($("#user").val().length!=0&&$("#email").val().length!=0&&$("#rank").val().length!=0&&$("#opinion").val().length!=0){
-//                 alert("Thank you!");
-//                 $('#form').trigger("reset");
-//             }
+	<!--<h1 class="text-center header">League Of Legends Survey</h1>-->
+	<form action="submission.html" class="text-center" id="form" method="get" name="form">
+		<h1 class="text-center header">League Of Legends Survey (New Honor System)</h1>
+		<div class="formBody">
+			<section>
+				<table>
+					<tr>
+						<td>
+							<h4>Player Information:</h4>
+							<hr>
+						</td>
+					</tr>
+					<tr>
+						<td>Username:</td>
+						<td><input class="required user text-input" id="user" name="username" placeholder="username" required="" type="text"></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><input class="text-input required" id="email" name="email" placeholder="email" required="" type="email"></td>
+					</tr>
+					<tr>
+						<td>Date of Birth:</td>
+						<td><input class="ttext-input" id="dateofbirth" name="dateofbirth" type="date"></td>
+					</tr>
+					<tr>
+						<td>
+							<h4>Ranking:</h4>
+							<hr>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="Unranked">Unranked<input id="Unranked" name="ranking" type="radio" value="Unranked"></label></td>
+						<td><label for="Bronze">Bronze<input id="Bronze" name="ranking" required="" type="radio" value="Bronze"></label></td>
+					</tr>
+					<tr>
+						<td><label for="Silver-or-Gold">Silver or Gold<input id="Silver-or-Gold" name="ranking" type="radio" value="Silver or Gold"></label></td>
+						<td><label for="Platinum-or-higher">Platinum or higher<input id="Platinum-or-higher" name="ranking" type="radio" value="Platinum or higher"></label></td>
+					</tr>
+					<tr>
+						<td>Number of champions you main:</td>
+						<td><input max="130" min="1" type="number"></td>
+					</tr>
+					<tr>
+						<td>Select the kind of Champions you prefer:</td>
+						<td><select name="typeofChamps">
+							<option value="Tanks">
+								Tanks
+							</option>
+							<option value="Fighters">
+								Fighters
+							</option>
+							<option value="Slayers">
+								Slayers
+							</option>
+							<option value="Mages">
+								Mages
+							</option>
+							<option value="Healers">
+								Healers
+							</option>
+							<option value="Marksmen">
+								Marksmen
+							</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>
+							<h4>Your Opinion On The New Honor System:</h4>
+							<hr>
+						</td>
+					</tr>
+					<tr>
+						<td>Should you be allowed to honor the enemy team as well?</td>
+						<td><label><input name="honorenemy" type="radio" value="no">No</label> <label><input name="honorenemy" type="radio" value="yes">Yes</label></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><label><input class="required" id="opinion" name="honorenemy" required="" type="radio" value="Doesn't matter">Doesn't matter</label></td>
+					</tr>
+					<tr>
+						<td><input id="great" name="opinion" type="checkbox" value="great"><label for="great">It is great</label> <input id="improvement" name="opinion" type="checkbox" value="improvement"><label for="improvement">It could be better</label></td>
+					</tr>
+					<tr>
+						<td><input id="terrible" name="opinion" type="checkbox" value="terrible"><label for="terrible">It is terrible</label> <input id="friendlier" name="opinion" type="checkbox" value="friendlier"><label for="friendlier">I feel like people have gotten friendlier in game</label></td>
+					</tr>
+					<tr>
+						<td>Comments and questions:</td>
+						<td>
+						<textarea></textarea></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input id="submit-button" name="submit-button" type="submit" value="Submit Survey"></td>
+					</tr><!--<legend>Ranking</legend>-->
+				</table>
+			</section>
+		</div>
+	</form>
+	<script>
+	   /*global $*/
+	//     $("#submit-button").click(function(){
+	//             if($("#user").val().length!=0&&$("#email").val().length!=0&&$("#rank").val().length!=0&&$("#opinion").val().length!=0){
+	//                 alert("Thank you!");
+	//                 $('#form').trigger("reset");
+	//             }
 
 
 
-// });
-        // if ($(".required").val().length!=0){
-        //     alert("Thank you!");
-        //     $('#form').trigger("reset");
-        // }
-    $("#submit-button").click(function(){
-        var count=0;
-        $('.required').each(function(index, obj){
-            if($(this).val().length==0){
-                count++;
-            }
-        }); 
-        if($('input[name=ranking]:checked').length<=0||$('input[name=honorenemy]:checked').length<=0){
-                event.preventDefault();
-                alert("choose a ranking, and opponent honor option");
-        }
-        
-            
-        if (count==0){
-            sessionStorage.setItem("user",document.getElementById("user").value);
-            //ask about getting the value of the selected radio button
-            
-            var ranks=$("input[name='ranking']");
-            for (var i=0; i< ranks.length; i++){
-                if (ranks[i].checked){
-                    var rank=ranks[i].value;
-                    sessionStorage.setItem("rank", rank);
-                }
-            }
-            
-            alert("Thank you "+sessionStorage.getItem("user")+" !");
-            // 
-        }
-            // $('#form').trigger("reset");    
+	// });
+	       // if ($(".required").val().length!=0){
+	       //     alert("Thank you!");
+	       //     $('#form').trigger("reset");
+	       // }
+	   $("#submit-button").click(function(){
+	       var count=0;
+	       $('.required').each(function(index, obj){
+	           if($(this).val().length==0){
+	               count++;
+	           }
+	       }); 
+	       if($('input[name=ranking]:checked').length<=0||$('input[name=honorenemy]:checked').length<=0){
+	               event.preventDefault();
+	               alert("choose a ranking, and opponent honor option");
+	       }
+	       
+	           
+	       if (count==0){
+	           sessionStorage.setItem("user",document.getElementById("user").value);
+	           //ask about getting the value of the selected radio button
+	           
+	           var ranks=$("input[name='ranking']");
+	           for (var i=0; i< ranks.length; i++){
+	               if (ranks[i].checked){
+	                   var rank=ranks[i].value;
+	                   sessionStorage.setItem("rank", rank);
+	               }
+	           }
+	           
+	           alert("Thank you "+sessionStorage.getItem("user")+" !");
+	           // 
+	       }
+	           // $('#form').trigger("reset");    
 
-        
-    //you can use this to access the current item
-                   
-});
-    </script>
-
-
+	       
+	   //you can use this to access the current item
+	                  
+	});
+	</script>
 </body>
 </html>
